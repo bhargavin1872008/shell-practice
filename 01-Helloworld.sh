@@ -1,2 +1,3 @@
-!#/bin/bash
-echo "Hello world from banglore"
+#!/bin/bash
+
+echo "Hello world!"
