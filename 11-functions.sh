@@ -29,20 +29,27 @@ fi
 
 #dnf list installed python
 
-#dnf list installed python3
-#if [ $? -ne 0 ]
+dnf list installed python3.12
+if [ $? -ne 0 ]
 then
-    echo "python3 is not installed... going to install it"
-    dnf install python3 -y
-    VALIDATE $? "python3"
+    echo "python4 is not installed... going to install it"
+    dnf install python3.12 -y
+    dnf install python3.12 -y
+    if [ $? -eq 0 ]
+    then
+        echo "Installing python3.12 is ... SUCCESS"
+    else
+        echo "Installing python3.12 is ... FAILURE"
+        exit 1
+    fi
 else
-    echo "python3 is already installed...Nothing to do"
-#fi
+    echo "python4 is already installed...Nothing to do"
+fi
 
 if [ $? -ne 0 ]
 then
-    echo "MySQL is not installed... going to install it"
-    dnf install mysql -y
+    echo "python3.12 is not installed... going to install it"
+    dnf install python3.12 -y
     if [ $? -eq 0 ]
     then
         echo "Installing MySQL is ... SUCCESS"
