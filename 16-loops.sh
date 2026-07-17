@@ -14,6 +14,8 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
+PACKAGES=("mysql" "python" "nginx" "httpd")
+
 VALIDATE( ){
     if [ $1 -eq 0 ]
         then
