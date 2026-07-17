@@ -43,7 +43,7 @@ then
         exit 1
     fi
 else
-    echo "python4 is already installed...Nothing to do"
+    echo "python3.12 is already installed...Nothing to do"
 fi
 
 if [ $? -ne 0 ]
