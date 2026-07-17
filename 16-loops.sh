@@ -33,6 +33,7 @@ else
 fi
 
 for package in "${PACKAGES[@]}"
+do
 {
     dnf list installed package
     if [ $? -ne 0 ]
@@ -45,3 +46,4 @@ for package in "${PACKAGES[@]}"
         echo -e "Nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE
     fi
 }
+done
