@@ -16,7 +16,13 @@ if [ $? -ne 0 ]
 then
     echo "nginx is not installed... going to install it"
     dnf install nginx -y
-    VALIDATE $? "nginx"
+    if [ $? -eq 0 ]
+    then
+        echo "Installing nginx is ... SUCCESS"
+    else
+        echo "Installing nginx is ... FAILURE"
+        exit 1
+    fi
 else
     echo "nginx is already installed...Nothing to do"
 fi
