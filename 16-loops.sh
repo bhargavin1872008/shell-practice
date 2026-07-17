@@ -27,9 +27,9 @@ else
     echo "You are running with root access"
 fi
 
-for package in $@
+for package in "${PACKAGES[@]}"
 {
-    dnf list installed "${PACKAGES[@]}"
+    dnf list installed package
     if [ $? -ne 0 ]
     then
         echo "$package is not installed... going to install it" | tee -a $LOG_FILE
