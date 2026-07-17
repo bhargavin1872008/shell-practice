@@ -7,7 +7,6 @@ then
     echo "ERROR:: Please run this script with root access"
     echo "$?"
     exit 1 #give other than 0 upto 127
-    echo "$?"
 else
     echo "You are running with root access"
 fi
