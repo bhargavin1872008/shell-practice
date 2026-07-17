@@ -14,7 +14,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
-VALIDATE( ){
+VALIDATE(){
     if [ $1 -eq 0 ]
         then
             echo -e "Installing $2 is ...$G SUCCESS $N" | tee -a $LOG_FILE
@@ -48,7 +48,7 @@ fi
 dnf list installed python3.12 &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo "python4 is not installed... going to install it" | tee -a $LOG_FILE
+    echo "python4=3.12 is not installed... going to install it" | tee -a $LOG_FILE
     dnf install python3.12 -y &>>$LOG_FILE
     VALIDATE $? "python3.12"
 else
