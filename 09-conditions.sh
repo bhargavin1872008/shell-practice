@@ -2,7 +2,7 @@
 
 No=$1
 
-if [$No -le 10]
+if [ $No -le 10 ]
 then
     echo "Given number $No is less than 10"
 else
