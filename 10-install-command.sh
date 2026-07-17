@@ -1,5 +1,5 @@
 #!/bin/bash
 
-USERID=$(id -u)
+USERID=$(id)
 
 echo " $USERID "
