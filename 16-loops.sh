@@ -29,15 +29,15 @@ fi
 
 for package in $@
 {
-    dnf list installed $package
+    dnf list installed ${PACKAGES[@]}
     if [ $? -ne 0 ]
     then
-        echo "$package is not installed... going to install it"
-        dnf install $package -y
-        VALIDATE $? $package
+        echo "$package is not installed... going to install it" | tee -a $LOG_FILE
+        dnf install $package -y &>>$LOG_FILE
+        VALIDATE $? "$package"
         
     else
-        echo "nginx is already installed...Nothing to do"
+        echo -e "Nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE
     fi
 }
 
