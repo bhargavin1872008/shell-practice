@@ -14,7 +14,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
-VALIDATE(){
+VALIDATE( ){
     if [ $1 -eq 0 ]
         then
             echo -e "Installing $2 is ...$G SUCCESS $N" | tee -a $LOG_FILE
