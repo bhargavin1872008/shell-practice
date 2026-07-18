@@ -34,7 +34,7 @@ else
     echo "You are running with root access" | tee -a $LOG_FILE
 fi
 
-for package in "${PACKAGES[@]}"
+for package in ${PACKAGES[@]}
 do
 {
     dnf list installed package
