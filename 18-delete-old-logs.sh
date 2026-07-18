@@ -40,6 +40,6 @@ do
 {
     echo " deleting files in the $filepath " | tee -a $LOG_FILE
     rm -rf $filepath
-}done($FILES_TO_DELETE)
+}done <<< $FILES_TO_DELETE
 
 echo "Script executed successfully"
