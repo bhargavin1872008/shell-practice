@@ -37,9 +37,8 @@ FILES_TO_DELETE=$(find $SOURCE_DIR -name ".log" -mtime +14)
 
 while IFS=read -r filepath
 do
-{
     echo " deleting files in the $filepath " | tee -a $LOG_FILE
     rm -rf $filepath
-}done <<< $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE
 
 echo "Script executed successfully"
